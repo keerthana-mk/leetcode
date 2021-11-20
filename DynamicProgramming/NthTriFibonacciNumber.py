@@ -11,8 +11,6 @@
 # T_3 = 0 + 1 + 1 = 2
 # T_4 = 1 + 1 + 2 = 4
 import time
-
-
 class Solution:
     def tribonacci (self, n: int) -> int:
         fib_3 = [''] * 38
