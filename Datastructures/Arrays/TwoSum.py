@@ -7,10 +7,11 @@
 # Output: [1,2]
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
-        for l in range(0, len(nums) - 1):
-            for k in range(l + 1, len(nums) - 1):
-                if nums[k] + nums[l] == target:
-                    return [l, k]
+        dictMap = {}
+        for i in range(len(nums)):
+            if target - nums[i] in dictMap:
+                return [dictMap[target-nums[i]], i]
+            dictMap[nums[i]] = i
 
 
 s = Solution()
