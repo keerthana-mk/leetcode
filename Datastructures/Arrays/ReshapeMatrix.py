@@ -10,14 +10,24 @@
 
 class Solution:
     def matrixReshape(self, mat: list[list[int]], r: int, c: int) -> list[list[int]]:
-        rows = mat[0]
-        cols = mat
-        new_mat = [j for i in mat[0] for j in i]
-        print(new_mat)
+        new_mat = []
+        result = [[0 for i in range(c)] for _ in range(r)]
+
+        for row in mat:
+            for col in row:
+                new_mat.append(col)
+        if(len(new_mat)!= r*c):
+            return mat
+        # print(new_mat)
+        for i in range(r):
+            for j in range(c):
+                result[i][j] = new_mat.pop(0)
+        # print(result)
+        return result
 
 
 s = Solution()
 mat = [[1, 2], [3, 4]]
-r = 1
-c = 4
+r = 2
+c = 2
 print(s.matrixReshape(mat, r, c))
