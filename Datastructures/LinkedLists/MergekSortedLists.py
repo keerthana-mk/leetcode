@@ -38,6 +38,7 @@ Return dummy head's next node.
 Note that we use a dummy head to simplify the code. Without a dummy head, you would have to write extra conditional statements to initialize the head's value.
 '''
 from typing import Optional
+import queue
 
 
 class ListNode:
@@ -48,9 +49,13 @@ class ListNode:
 
 class Solution:
     def mergeKLists(self, lists: list[Optional[ListNode]]) -> Optional[ListNode]:
-       new_listNode = ListNode()
-       for i in lists:
-
+        head = current = ListNode(0)
+        print(head,current)
+        pq = queue.PriorityQueue()
+        for l in lists:
+            print(l)
+            if l:
+                pq.put(l.val, l)
 
 
 s = Solution()
