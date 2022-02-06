@@ -29,9 +29,7 @@ class Solution:
             elif i.split(" ")[1].isalpha():
                 letters.append(i)
         # print("Digits = ", digits, " letters= ", letters)
-        # lambda x: (x.split(" ")[1:], x.split(" ")[0])
         letters.sort(key=lambda x: (x.split(" ")[1:], x.split(" ")[0]))
-        # print(letters)
         return letters + digits
 
 
