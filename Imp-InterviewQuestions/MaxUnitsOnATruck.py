@@ -67,3 +67,14 @@ s = Solution()
 boxTypes = [[1, 3], [2, 2], [3, 1]]
 truckSize = 4
 s.maximumUnits(boxTypes, truckSize)
+
+import numpy as np
+X=np.array([[1, 5, 1, 2]]) # augmenting the input
+w=np.array([2,-1,4,8])
+y = [10]
+alpha = .3
+m = X.shape[0]
+y_hat = X.dot(w)
+MSE = 1/float(m)* (np.dot(( - y), (y_hat - ...)))
+lasso_loss = ... + alpha*sum(...)
+print(lasso_loss)
