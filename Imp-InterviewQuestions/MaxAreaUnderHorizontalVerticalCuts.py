@@ -48,7 +48,6 @@ class Solution:
 
         return (maxWidth*maxHeight) % modulo
 
-
 s = Solution()
 h = 5
 w = 4
