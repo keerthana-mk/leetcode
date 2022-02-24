@@ -22,16 +22,38 @@
 
 class Solution:
     def maxProfit(self, inventory: list[int], orders: int) -> int:
-        modulo = pow(10,9)+7
-        inventory.sort()
-        maxTotal =0
-        
-        print(maxTotal) % modulo
+        modulo = pow(10, 9) + 7
+        maxTotal = 0
+        if len(inventory) <=1:
+            return inventory
+
+        while orders > 0:
+            inventory = sorted(inventory, reverse=True)
+            print("inventry=", inventory)
+            left, right, diff = inventory[0], inventory[1], inventory[0] - inventory[1]
+            # print("left= {} , right= {},diff= {}".format(left, right, diff))
+            if inventory[0] != inventory[1] :
+                maxTotal += abs((left * (left + 1) // 2) - (right * (right + 1) // 2) )
+                # maxTotal += sum(inventory[0:2])
+                # print("max total in while loop=", maxTotal)
+                orders -= diff
+                # print("orders =", orders)
+                inventory[0] = inventory[0] - diff
+            # elif(inventory[0] == inventory[1]):
+            else:
+                maxTotal += (inventory[0])
+                orders -= 1
+                inventory[0] -= 1
+                # inventory[1] -= 1
+                # print("orders =", orders)
+        # print(maxTotal%modulo)
+        return maxTotal%modulo
+
 
 s = Solution()
 inventory = [2, 5]
 orders = 4
-s.maxProfit(inventory,orders)
+s.maxProfit(inventory, orders)
 inventory1 = [3, 5]
 orders1 = 6
-s.maxProfit(inventory1,orders1)
+s.maxProfit(inventory1, orders1)
