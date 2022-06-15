@@ -10,6 +10,7 @@ class Solution:
         dictMap = {}
         for i in range(len(nums)):
             if target - nums[i] in dictMap:
+                # print(dictMap)
                 return [dictMap[target-nums[i]], i]
             dictMap[nums[i]] = i
 

@@ -20,16 +20,17 @@
 #
 class Solution:
     def plusOne(self, digits: list[int]) -> list[int]:
-        n = len(digits)-1
-        for i in range(n,-1,-1):
+        len_n = len(digits)
+        for i in range(len_n):
+            n = len_n - i -1
             if digits[n] == 9:
                 print("am i coming here")
-                digits[n-i] = 0
+                digits[n] = 0
             else:
                 digits[n] +=1
                 return digits
         return [1]+digits
-s= Solution()
+
 digits = [1, 2, 3]
 digits1 = [9]
 print(s.plusOne(digits))

@@ -14,7 +14,7 @@ class Solution:
         n = len(s)
         count = 0
         alist = [s[i:j + 1] for i in range(n) for j in range(i, n)]
-        # print(alist)
+        print(alist)
         for i in alist:
             if i == i[::-1]:
                 count += 1

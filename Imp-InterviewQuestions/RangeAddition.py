@@ -30,4 +30,4 @@ class Solution:
 s = Solution()
 length = 5
 updates = [[1, 3, 2], [2, 4, 3], [0, 2, -2]]
-s.getModifiedArray(length, updates)
+print(s.getModifiedArray(length, updates))

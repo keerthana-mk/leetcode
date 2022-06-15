@@ -83,15 +83,6 @@ class Solution:
                 node = node.children[c]
                 node.list.append(product)
 
-    def constructTrie(self, products):
-        for product in products:
-            node = self.root
-            for c in product:
-                if c not in node.children:
-                    node.children[c] = Trie()
-                node = node.children[c]
-                node.list.append(product)
-
     def getSuggestionSearchWord(self, searchWord):
         node = self.root
         result = []

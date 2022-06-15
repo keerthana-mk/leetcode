@@ -27,4 +27,4 @@ class Solution:
 
 
 sol = Solution()
-sol.modifyString("?zs")
+print(sol.modifyString("?zs"))

@@ -43,6 +43,7 @@ Pivot element is smaller than the first element of the array, i.e. the rotation 
 
   - Otherwise: go left: `end = mid - 1`.
 We're here because the target is not found. Return -1.
+[4, 5, 6, 7, 0, 1, 2]
 '''
 
 class Solution:

@@ -11,17 +11,18 @@
 class Solution:
     def matrixReshape(self, mat: list[list[int]], r: int, c: int) -> list[list[int]]:
         new_mat = []
-        result = [[0 for i in range(c)] for _ in range(r)]
+        result = [0 for i in range(c) for _ in range(r)]
+        print(result)
 
         for row in mat:
             for col in row:
                 new_mat.append(col)
         if(len(new_mat)!= r*c):
             return mat
-        # print(new_mat)
+        print("new_mat",new_mat)
         for i in range(r):
             for j in range(c):
-                result[i][j] = new_mat.pop(0)
+                result.append(new_mat.pop(0))
         # print(result)
         return result
 

@@ -65,6 +65,14 @@ class LRUCache(OrderedDict):
             self.popitem(last=False)
 
 # Your LRUCache object will be instantiated and called as such:
-# obj = LRUCache(capacity)
-# param_1 = obj.get(key)
-# obj.put(key,value)
+capacity = 3
+obj = LRUCache(capacity)
+# param_1 = obj.get(6)
+# print(param_1)
+obj.put(1,5)
+obj.put(2,6)
+param_1 = obj.get(1)
+print(param_1)
+obj.put(3,7)
+param_2 = obj.get(3)
+print(param_2)

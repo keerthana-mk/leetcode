@@ -7,7 +7,7 @@
 #Output: true
 
 class Solution:
-    def containsNearbyAlmostDuplicate(self, nums: List[int], k: int, t: int) -> bool:
+    def containsNearbyAlmostDuplicate(self, nums: list[int], k: int, t: int) -> bool:
         n = len(nums)
         map = {}
         for i in range(n):

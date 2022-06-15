@@ -58,8 +58,9 @@ class Solution:
             - updating a dictionary will update the value for existing keys accordingly (int in this case)
         '''
         for user, site in users.items():
-            user_site_cominations = combinations(site, 3)
-            unique_user_site_combinations = set(user_site_cominations)
+            user_site_combinations = combinations(site, 3)
+            print("user_site_combinations=",user_site_combinations)
+            unique_user_site_combinations = set(user_site_combinations)
             # print("set combinations=", unique_user_site_combinations)
             # counting number of patterns
             unique_user_site_combinations = Counter(unique_user_site_combinations)
