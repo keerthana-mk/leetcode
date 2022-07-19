@@ -10,20 +10,27 @@
 # Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (money = 1).
 # Total amount you can rob = 2 + 9 + 1 = 12.
 class Solution:
-    def rob (self, nums: list[int]) -> int:
-        sum_total_even = 0
-        sum_total_odd=0
-        # if len(nums)==2:
-        #     return max(nums[1],nums[0])
-        for i in range(0, len(nums), 2):
-            sum_total_even += (nums[i])
-        for i in range(1, len(nums),2):
-            sum_total_odd+=nums[i]
-        if sum_total_even > sum_total_odd:
-            return sum_total_even
-        else:
-            return sum_total_odd
+    def rob(self, nums: list[int]) -> int:
+        if not nums:
+            return 0
+
+        maxSum = 0
+        a = nums[0]
+
+        if len(nums) == 1:
+            print("i am coming here")
+            return a
+        b = max(nums[0], nums[1])
+        if len(nums) < 3:
+            return b
+        for i in range(2, len(nums)):
+            maxSum = max(a + nums[i], b)
+            a = b
+            b = maxSum
+        return maxSum
 
 s = Solution()
 nums = [2,7,9,3,1]
+nums1 =[2,1,1,2]
 print(s.rob(nums))
+print(s.rob(nums1))
